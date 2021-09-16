@@ -52,4 +52,7 @@ export const Button = styled.button`
     }}
 
     ${({operation}) => operation && `background-color: gray;`}
+    ${({control}) => control && `background-color: skyblue;`}
+    ${({equals}) => equals && `border-bottom-right-radius: 10px; background-color: gray;`}
+    ${({period}) => period && `border-bottom-left-radius: 10px; background-color: skyblue;`}
 `
