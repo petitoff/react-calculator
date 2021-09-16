@@ -34,3 +34,22 @@ export const Current = styled.div`
     color: white;
     font-size: 2.5rem;
 ` 
+
+export const Button = styled.button`
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px outset white;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    ${ function({ gridSpan }){
+        if(gridSpan){
+            return `grid-column: span ${gridSpan};`
+        }
+    }}
+
+    ${({operation}) => operation && `background-color: gray;`}
+`
