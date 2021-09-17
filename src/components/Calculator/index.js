@@ -5,9 +5,9 @@ export default function Calculator(){
     const [current, setCurrent] = useState('')
     const appendValue = (el) => {
         const value = el.target.getAttribute('data')
-
+        
+        if(value === "." && current.includes('.')) return
         setCurrent(current + value)
-        console.log(value)
     }
 
     return(
@@ -31,7 +31,7 @@ export default function Calculator(){
             <Button data={"2"} onClick={appendValue}>2</Button>
             <Button data={"3"} onClick={appendValue}>3</Button>
             <Button operation>-</Button>
-            <Button period>.</Button>
+            <Button period  data={"."} onClick={appendValue}>.</Button>
             <Button data={"0"} onClick={appendValue}>0</Button>
             <Button operation gridSpan={2} equals>=</Button>
         </Container>
