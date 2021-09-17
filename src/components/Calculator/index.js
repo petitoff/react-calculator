@@ -25,7 +25,6 @@ export default function Calculator(){
 
     const chooseOperation = (el) => {
         if(current === '') return
-        if(current !== '' && previous !== '') return
 
         if(previous !== ''){
             let value = compute();
