@@ -16,13 +16,19 @@ export default function Calculator(){
     const handleDelete = () => {
         setCurrent(current.slice(0, -1))
     }
+
+    const handleAllClear = () =>{
+        setCurrent('')
+        setPrevious('')
+        setOperation('')
+    }
     return(
         <Container>
             <Screen>
                 <Previous>{previous} {operation}</Previous>
                 <Current>{current}</Current>
             </Screen>
-            <Button gridSpan={2} control>AC</Button>
+            <Button gridSpan={2} control onClick={handleAllClear}>AC</Button>
             <Button control onClick={handleDelete}>DEL</Button>
             <Button operation>÷</Button>
             <Button data={"7"} onClick={appendValue}>7</Button>
